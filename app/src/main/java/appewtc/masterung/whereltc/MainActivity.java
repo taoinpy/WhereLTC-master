@@ -80,13 +80,16 @@ public class MainActivity extends AppCompatActivity {
                             R.drawable.rat48);
                     myAlert.myDialog();
 
-                } else if (passwordString.equals(loginString[3])) {
-                    //Password True
+
                 }else if (passwordString.equals(loginString[3])) {
 
-                    Toast.makeText(MainActivity.this, "Welcom" + loginString[1],
+                    Toast.makeText(MainActivity.this, "Welcome" + loginString[1],
                             Toast.LENGTH_LONG).show();
 
+                    Intent intent = new Intent(MainActivity.this, ServiceActivity.class);
+                    intent.putExtra("Login", loginString);
+                    startActivity(intent);
+                    finish();
 
                 } else {
                     //Password false
